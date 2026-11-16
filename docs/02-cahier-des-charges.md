@@ -59,6 +59,7 @@ Scénarios d'e-mail marketing avancés, tutoriels interactifs, vidéos pédagogi
 
 | Terme                       | Définition                                                                                                   |
 |-----------------------------|--------------------------------------------------------------------------------------------------------------|
+| Administrateur              | Paramètre et gère le site. Attribut les rôles aux utilisateurs.
 | Adhérent (amapien·ne)       | Personne à jour de sa cotisation annuelle                                                                    |
 | Producteur                  | Paysan ou paysanne partenaire. Il a un espace et des produits.                                               |
 | Référent                    | Adhérent bénévole qui suit un ou plusieurs producteurs ou commandes groupées (le « super-utilisateur »)      |
@@ -76,8 +77,8 @@ Scénarios d'e-mail marketing avancés, tutoriels interactifs, vidéos pédagogi
 
 Les rôles se cumulent : un référent est aussi adhérent, et un administrateur a tous les droits.
 
-| N°     | Fonction                                               | Visiteur | Adhérent    | Producteur             | Référent            | Admin      |
-|--------|--------------------------------------------------------|----------|-------------|------------------------|---------------------|------------|
+| N°     | Fonction                                               | Visiteur | Adhérent     | Producteur             | Référent             | Admin      |
+|--------|--------------------------------------------------------|----------|--------------|------------------------|----------------------|------------|
 | ROL-01 | Voir la vitrine, les producteurs, le calendrier public | ✔        | ✔           | ✔                      | ✔                   | ✔          |
 | ROL-02 | Formulaire de contact, demande d'adhésion              | ✔        | ✔           | ✔                      | ✔                   | ✔          |
 | ROL-03 | Gérer son compte                                       |          | ✔           | ✔                      | ✔                   | ✔          |
@@ -104,7 +105,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 | PUB-01 | Accueil                   | Accroche, prochaine distribution, actualités et période d'adhésion, commande groupée ouverte (titre), bouton « Adhérer » | Admin          |
 | PUB-02 | L'AMAP                    | Fusion de « Qu'est-ce qu'une AMAP » et « Notre fonctionnement » + charte et code de bonne conduite en PDF                | Admin          |
 | PUB-03 | Nos producteurs           | Liste en vignettes, filtrable par type de produit → fiche producteur générée automatiquement                             | Référents      |
-| PUB-04 | Fiche producteur          | Présentation, photos, produits (un clic ouvre le produit en grand : photo et texte complet), offres de contrat (sans les prix si on le souhaite), liens, labels | Référents      |
+| PUB-04 | Fiche producteur          | Présentation, photos, produits, offres de contrat (sans les prix si on le souhaite), liens, labels                       | Référents      |
 | PUB-05 | Calendrier                | Dates des distributions et des prochaines permanences d'adhésion (pour venir rencontrer l'AMAP)                          | Admin          |
 | PUB-06 | Adhérer                   | Étapes, cotisation, dates des permanences d'adhésion, paiement en ligne de la cotisation, création de compte             | Admin          |
 | PUB-07 | Contact / Nous rencontrer | Formulaire de contact, adresse postale, lieu de distribution (carte), prochaines permanences                             | Admin          |
@@ -113,6 +114,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 ### 4.1 Formulaire de contact
 
 -   **CON-01** Champs : Nom, Prénom, E-mail, « Je suis » (adhérent·e / producteur·rice / personne intéressée par l'AMAP — formulation à affiner), Sujet (liste déroulante), Message.
+    **[Remarques : Il est peut-être préférable que les adhérents +/- les producteurs passent par la fonction "Echanges" de l'espace adhérents pour communiquer]**
 -   **CON-02** Les sujets proposés sont : Adhésion, Commandes et contrats, Permanences, Devenir producteur partenaire, Site internet, Autre. Chaque sujet est **envoyé à l'adresse ou à l'alias adapté** (§13).
 -   **CON-03** Anti-spam : champ caché piège et limitation du nombre d'envois, sans captcha intrusif. La vérification de l'adresse e-mail est inutile pour un simple message. Un accusé de réception est envoyé à l'expéditeur.
 -   **CON-04** Quand l'expéditeur choisit « Je suis adhérent·e », le formulaire propose un lien vers « Échanges entre adhérents » (ADH-23), après connexion.
@@ -135,7 +137,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 1.  **ADH-06** Tableau de bord → « Mes contrats » → liste des **offres de contrat ouvertes**, par producteur.
 2.  **ADH-07** Pour chaque producteur : liste des produits et de leurs prix. Pour chaque produit, l'adhérent choisit :
     -   la **quantité** ;
-    -   la **fréquence**, parmi les choix autorisés par le producteur : toutes les distributions, 1 sur 2 (série A ou série B), ou dates choisies à la main ;
+    -   la **fréquence**, parmi les choix autorisés par le producteur : toutes les distributions, 1 sur 2 (série A ou série B), [ou dates choisies à la main ;]
     -   le **calendrier personnel** et le **panier** se mettent à jour en direct, avec une icône par produit sur chaque date.
 3.  **ADH-08** « Voir mon panier » : récapitulatif **par producteur**, avec le nombre de livraisons, le total, et le **choix de l'échéancier** (par exemple 1, 3 ou 6 chèques, selon ce que le producteur autorise) et du mode (chèque ou virement). L'écran affiche l'ordre du chèque ou le RIB, ainsi que les mois d'encaissement.
 4.  **ADH-09** Validation → **e-mail de confirmation** avec le récapitulatif, l'échéancier et le contrat du producteur en PDF.
@@ -289,7 +291,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 ## 12. Exigences non fonctionnelles
 
--   **NF-01** **Mobile d'abord** : la plupart des adhérents utiliseront un téléphone.
+-   **NF-01** ~**Mobile d'abord** : la plupart des adhérents utiliseront un téléphone.~ **PC d'abord** : la plupart des adhérents utiliseront un pc
 -   **NF-02** **Simplicité** : chaque rôle ne voit que ses menus. Libellés en français courant, sans jargon technique.
 -   **NF-03** **Accessibilité** : contrastes, textes alternatifs, navigation au clavier (objectif : bonnes pratiques RGAA).
 -   **NF-04** **RGPD** : l'AMAP est responsable du traitement et Infomaniak est sous-traitant. Les données sont hébergées en Suisse. Il faut une politique de confidentialité, un consentement pour le partage du téléphone, la possibilité de supprimer son compte, et ne collecter que les données nécessaires. Pas de traceur publicitaire.
