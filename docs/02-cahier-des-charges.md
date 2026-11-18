@@ -289,7 +289,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 ## 12. Exigences non fonctionnelles
 
--   **NF-01** **Mobile d'abord** : la plupart des adhérents utiliseront un téléphone.
+-   **NF-01** ~**Mobile d'abord** : la plupart des adhérents utiliseront un téléphone.~ **PC d'abord** : la plupart des adhérents utiliseront un PC.
 -   **NF-02** **Simplicité** : chaque rôle ne voit que ses menus. Libellés en français courant, sans jargon technique.
 -   **NF-03** **Accessibilité** : contrastes, textes alternatifs, navigation au clavier (objectif : bonnes pratiques RGAA).
 -   **NF-04** **RGPD** : l'AMAP est responsable du traitement et Infomaniak est sous-traitant. Les données sont hébergées en Suisse. Il faut une politique de confidentialité, un consentement pour le partage du téléphone, la possibilité de supprimer son compte, et ne collecter que les données nécessaires. Pas de traceur publicitaire.
