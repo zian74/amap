@@ -67,10 +67,11 @@ Scénarios d'e-mail marketing avancés, tutoriels interactifs, vidéos pédagogi
 | Commande groupée            | Commande ponctuelle, avec une date d'ouverture et une date de clôture, livrée lors d'une distribution donnée |
 | Distribution                | Une date de remise des paniers (n°, date, lieu, horaires, producteurs présents)                              |
 | Permanence                  | Participation d'un adhérent à l'organisation d'une distribution (installation, distribution, nettoyage)      |
+| Permanent                   | Personne qui participe à une distribution |
 | Responsable de distribution | Personne qui coordonne une distribution et envoie le rappel aux permanents                                   |
 | Échéance                    | Un règlement prévu (montant, mois d'encaissement, mode chèque ou virement, bénéficiaire)                     |
 | Pointage                    | Le fait de marquer une échéance comme reçue ou encaissée                                                     |
-| Feuille d'émargement        | Liste imprimable « adhérent / quantité / signature », une par produit et par distribution                    |
+| Feuille d'émargement        | Liste imprimable « adhérent / quantité / signature », une par produit et par distribution. Permet d'attester que l'adhérent a pris possession de son panier                 |
 
 ## 3. Rôles et droits
 
@@ -121,7 +122,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 ### 5.1 Tableau de bord
 
-**ADH-01** Il affiche : la prochaine distribution (ce que je récupère, si je suis de permanence), les commandes groupées ouvertes, mes échéances à venir et une alerte si mon adhésion est à renouveler.
+**ADH-01** Il affiche : la prochaine distribution (ce que je récupère, si je suis ~de permanence~ permanent), les commandes groupées ouvertes, mes échéances à venir et une alerte si mon adhésion est à renouveler.
 
 ### 5.2 Compte et adhésion
 
@@ -135,7 +136,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 1.  **ADH-06** Tableau de bord → « Mes contrats » → liste des **offres de contrat ouvertes**, par producteur.
 2.  **ADH-07** Pour chaque producteur : liste des produits et de leurs prix. Pour chaque produit, l'adhérent choisit :
     -   la **quantité** ;
-    -   la **fréquence**, parmi les choix autorisés par le producteur : toutes les distributions, 1 sur 2 (série A ou série B), ou dates choisies à la main ;
+    -   la **fréquence**, parmi les choix autorisés par le producteur : toutes les distributions, 1 sur 2 (série A ou série B), ou dates choisies à la main {??};
     -   le **calendrier personnel** et le **panier** se mettent à jour en direct, avec une icône par produit sur chaque date.
 3.  **ADH-08** « Voir mon panier » : récapitulatif **par producteur**, avec le nombre de livraisons, le total, et le **choix de l'échéancier** (par exemple 1, 3 ou 6 chèques, selon ce que le producteur autorise) et du mode (chèque ou virement). L'écran affiche l'ordre du chèque ou le RIB, ainsi que les mois d'encaissement.
 4.  **ADH-09** Validation → **e-mail de confirmation** avec le récapitulatif, l'échéancier et le contrat du producteur en PDF.
@@ -143,7 +144,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 ### 5.4 Parcours « commande groupée »
 
-1.  **ADH-11** Tableau de bord → « Commandes groupées » → commandes ouvertes (souvent une seule), avec la date de clôture et la date de livraison.
+1.  **ADH-11** Tableau de bord → « Commandes groupées » → commandes ouvertes (souvent une seule), avec la date de clôture et la date et le lieu de livraison.
 2.  **ADH-12** L'adhérent sélectionne des produits et des quantités. Le panier et le calendrier se mettent à jour.
 3.  **ADH-13** « Voir mon panier » : récapitulatif par producteur, total, modalités de paiement indiquées par le référent.
 4.  **ADH-14** Validation → e-mail de confirmation. L'adhérent peut modifier sa commande jusqu'à la clôture.
@@ -154,15 +155,15 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 -   **ADH-16** Calendrier général des distributions, avec les producteurs présents à chaque date.
 -   **Inscription aux permanences** (règles du code de bonne conduite) :
     -   **ADH-17** les adhérents avec contrats choisissent **3 vœux de dates** et l'AMAP en retient 1 ou 2 ; les adhérents qui ne font que des commandes groupées choisissent 1 date ;
-    -   **ADH-18** chaque distribution a une équipe de 5 à 6 personnes, plus un **responsable de distribution** ;
+    -   **ADH-18** chaque distribution a une équipe de 5 à 6 ~personnes~ **permanents**, plus un **responsable de distribution** ;
     -   **ADH-19** en cas d'empêchement : échange avec un autre adhérent ou remplaçant extérieur (nom, téléphone, e-mail), saisi sur le site ;
     -   **ADH-20** une absence non remplacée est consignée (liste des « adhérents sollicitables ») ;
-    -   **ADH-21** le référent ou l'admin peut inscrire ou déplacer un adhérent.
+    -   **ADH-21** le référent ou ~l'admin~ l'administrateur peut inscrire ou déplacer un adhérent.
 -   Rappels automatiques (§11, MEL-07).
 
 ### 5.6 Mes paiements
 
-**ADH-22** Il affiche la liste de mes échéances par producteur et leur statut de pointage (en lecture seule) : attendu, reçu ou encaissé.
+**ADH-22** Il affiche la liste de mes échéances par producteur et leur statut de pointage (en lecture seule) : attendu, reçu {ou encaissé}-a revoir.
 
 ### 5.7 Échanges entre adhérents (retours du 16/11/2026)
 
@@ -177,7 +178,7 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 -   **ADH-24** Pendant la souscription, le calendrier montre aussi ce que l'adhérent reçoit déjà chez d'autres producteurs : icônes du contrat en cours en grand, autres commandes en petit. Au survol (ou au toucher) d'une date, une infobulle détaille tout ce qui est commandé.
 -   **ADH-25** « Mon calendrier » commence par la même vue, en petit : un mois à la fois, avec des flèches pour passer au mois suivant, et un bouton pour l'agrandir en fenêtre avec tous les mois. Elle garde toutes les icônes et les infobulles. La liste date par date reste en dessous.
--   **ADH-26** **Commande liée à un engagement** (exemple : boulangerie). L'adhérent s'engage sur un montant pour l'année (REF-22), puis commande ses produits tous les 15 jours (REF-24). S'il est engagé, il n'a rien à régler : le producteur déduit la commande du solde, et le site affiche une **estimation du solde restant**. Un adhérent non engagé peut aussi commander, pour du ponctuel : le site calcule le montant à régler **sur place** au producteur, à la distribution.
+-   **ADH-26** **Commande liée à un engagement** (exemple : boulangerie). L'adhérent s'engage sur un montant pour l'année (REF-22), puis commande ses produits tous les 15 jours (REF-24). S'il est engagé, il n'a rien à régler : le producteur déduit la commande du solde, et le site affiche une **estimation du solde restant**. Un adhérent non engagé peut aussi commander, pour du ponctuel : le site calcule une estimation du ~le~ montant à régler **sur place** au producteur, à la distribution.
 
 ## 6. Espace référent (back-office)
 
@@ -185,9 +186,9 @@ Les rôles se cumulent : un référent est aussi adhérent, et un administrateur
 
 **REF-01** Le bouton « Ajouter un producteur » ouvre un formulaire :
 
--   nom de la ferme, nom des producteurs, commune et adresse, téléphone, e-mail, site web et réseaux sociaux, SIRET (pour le contrat) ;
+-   nom de la ~ferme~ société, nom des producteurs, commune et adresse, téléphone, e-mail, site web et réseaux sociaux, SIRET (pour le contrat) ;
 -   types de produits (cases à cocher), labels (Bio, Demeter, Nature & Progrès…) ;
--   présentation (éditeur de texte simple), photos (glisser-déposer, recadrage automatique), documents PDF (gamme, tarifs, conseils) ;
+-   présentation (éditeur de texte ~simple~ avec mise en forme), photos (glisser-déposer, recadrage automatique), documents PDF (gamme, tarifs, conseils) ;
 -   mode de participation : contrat, commandes groupées ou les deux ;
 -   publication : brouillon ou publié.
 
